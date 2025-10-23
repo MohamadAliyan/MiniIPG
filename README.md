@@ -39,19 +39,19 @@
 | HTTP Client | Refit |
 | Validation | FluentValidation |
 | ORM / DB Access | Dapper / EFCore (قابل تنظیم) |
-| Testing | xUnit, Moq, FluentAssertions |
+| Testing | xUnit, Moq, FluentAssertions | Swagger
 | Logging | Serilog (File Sink) |
 ----------------------------------------------------------
 اجرای هر سرویس:
 
 cd PaymentService.Api
-dotnet run --urls=https://localhost:5001
+dotnet run --urls=http://localhost:5001
 
 cd GatewayService.Api
-dotnet run --urls=https://localhost:5002
+dotnet run --urls=http://localhost:5002
 
 cd NotificationService.Api
-dotnet run --urls=https://localhost:5003
+dotnet run --urls=http://localhost:5003
 -----------------------------------------------
 
 چرا از این ساختار استفاده شده؟
