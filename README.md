@@ -7,7 +7,7 @@
 کاربر از طریق Gateway وارد  صفحه پرداخت شده و پس از انجام عملیات پرداخت (موفق یا ناموفق)،  
 نتیجه تراکنش به سرویس Payment ارسال و وضعیت به‌روزرسانی می‌شود.
 
-در نهایت سرویس Notification از طریق RabbitMQ رویدادها را دریافت کرده و لاگ یا Callback انجام می‌دهد.
+در نهایت سرویس Notification از طریق RabbitMQ رویدادها را دریافت کرده و لاگ انجام می‌دهد.
 
 ---------------------------
 
@@ -23,10 +23,10 @@
   2. **Gateway Service** (پورت 5002)
      - شبیه‌سازی درگاه بانکی  
      - شبیه‌سازی پرداخت موفق/ناموفق  
-     - ارتباط با Payment از طریق HTTP (Refit) یا RabbitMQ  
+     - ارتباط با Payment از طریق HTTP (Refit)   
   3. **Notification Service** (پورت 5003)
      - دریافت پیام‌های RabbitMQ  
-     - ثبت لاگ یا ارسال Callback   
+     - ثبت لاگ یا ارسال Callback  و ذخیره ساری در فایل بااستفاده از   serilog 
 
 -----------------------------------------
 
@@ -45,15 +45,17 @@
 ----------------------------------------------------------
 اجرای هر سرویس:
 
-cd PaymentService.Api
+cd Payment\PaymentService.API
 dotnet run --urls=http://localhost:5001
 
-cd GatewayService.Api
+cd Gateway\GatewayService.API
 dotnet run --urls=http://localhost:5002
 
-cd NotificationService.Api
+cd Notification
 dotnet run --urls=http://localhost:5003
 -----------------------------------------------
+
+برای تست سرویس  از swagger می توانید استفاده کنید
 
 چرا از این ساختار استفاده شده؟
 
@@ -72,7 +74,7 @@ dotnet run --urls=http://localhost:5003
 
 مدیریت وضعیت‌های مختلف تراکنش (Pending, Success, Failed, Expired)
 
-پیاده‌سازی مصرف‌کننده RabbitMQ با نسخه جدید (بدون IModel)
+پیاده‌سازی مصرف‌کننده RabbitMQ با نسخه جدید
 
 مدیریت خطاهای Refit و بازگشت پاسخ استاندارد در همه‌ی APIها
 --------------------------------------------------------
