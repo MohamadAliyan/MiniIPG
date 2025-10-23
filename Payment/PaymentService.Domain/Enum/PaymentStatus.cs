@@ -1,0 +1,2 @@
+﻿namespace PaymentService.Domain.Enum;
+

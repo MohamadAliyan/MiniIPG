@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <Compile Remove="Payments\Commands\CreatePayment\**" />
+    <Compile Remove="Payments\Commands\VerifyPayment\**" />
+    <Compile Remove="Payments\Queries\GetPaymentStatus\**" />
+    <EmbeddedResource Remove="Payments\Commands\CreatePayment\**" />
+    <EmbeddedResource Remove="Payments\Commands\VerifyPayment\**" />
+    <EmbeddedResource Remove="Payments\Queries\GetPaymentStatus\**" />
+    <None Remove="Payments\Commands\CreatePayment\**" />
+    <None Remove="Payments\Commands\VerifyPayment\**" />
+    <None Remove="Payments\Queries\GetPaymentStatus\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Common\Behaviours\LoggingBehaviour.cs" />
+    <Compile Remove="Common\Interfaces\IEventPublisher.cs" />
+    <Compile Remove="Payments\Dtos\CreatePaymentResultDto.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\Shared.csproj" />
+    <ProjectReference Include="..\PaymentService.Domain\PaymentService.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="15.0.1" />
+    <PackageReference Include="FluentValidation" Version="12.0.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.0.0" />
+    <PackageReference Include="MediatR" Version="13.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Payments\Queries\" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>
