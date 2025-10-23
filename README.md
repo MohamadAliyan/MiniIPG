@@ -26,7 +26,7 @@
      - ارتباط با Payment از طریق HTTP (Refit) یا RabbitMQ  
   3. **Notification Service** (پورت 5003)
      - دریافت پیام‌های RabbitMQ  
-     - ثبت لاگ یا ارسال Callback به RedirectUrl  
+     - ثبت لاگ یا ارسال Callback   
 
 -----------------------------------------
 
@@ -39,8 +39,9 @@
 | HTTP Client | Refit |
 | Validation | FluentValidation |
 | ORM / DB Access | Dapper / EFCore (قابل تنظیم) |
-| Testing | xUnit, Moq, FluentAssertions | Swagger
+| Testing | xUnit, Moq, FluentAssertions 
 | Logging | Serilog (File Sink) |
+| Api Document | Swagger
 ----------------------------------------------------------
 اجرای هر سرویس:
 
