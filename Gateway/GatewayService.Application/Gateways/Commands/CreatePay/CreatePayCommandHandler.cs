@@ -106,11 +106,7 @@ public class CreatePayCommandHandler : IRequestHandler<CreatePayCommand, Result<
             catch (ApiException ex)
             {
 
-                // var errorBody = await ex.GetContentAsAsync<Result<PayResponseResult>>(); // اگه بدنه JSON خطا داره
-
-                var json = ex.Content; // بدنه خام
-                if (string.IsNullOrWhiteSpace(json))
-                    throw new Exception("s"); ;
+                var json = ex.Content; 
 
                 var options = new JsonSerializerOptions
                 {
