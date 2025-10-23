@@ -53,10 +53,11 @@ dotnet run --urls=http://localhost:5002
 
 cd Notification
 dotnet run --urls=http://localhost:5003
------------------------------------------------
+
 
 برای تست سرویس  از swagger می توانید استفاده کنید
 
+-----------------------------------------------
 چرا از این ساختار استفاده شده؟
 
 جداسازی وابستگی‌ها (Separation of Concerns)
